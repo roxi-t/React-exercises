@@ -1,0 +1,73 @@
+import logo from "./logo.svg";
+import "./App.css";
+
+function App() {
+  const age = 12;
+  return (
+    <div className="App">
+      {age > 20 ? <h1>over</h1> : <h1>under</h1>}
+      {age === 20 && <h1>age is 20 </h1>}
+      <button
+        type="submit"
+        style={{ fontSize: age > 20 ? "20px" : "15px" }}
+        className={age > 20 ? "success" : "warning"}
+      >
+        click me
+      </button>
+
+      <Job salary="4500" position="Front-end" company="Part" />
+      <Job salary="550" position="Back-end" company="AliBaba" />
+      <Job salary="790" position="DevOps-en" company="Microsoft" />
+    </div>
+  );
+}
+
+const Job = (props) => {
+  return (
+    <div>
+      <h1>Salary: {props.salary}</h1>
+      <h2>Position: {props.position}</h2>
+      <h3>Company: {props.company}</h3>
+    </div>
+  );
+};
+
+export default App;
+import logo from "./logo.svg";
+import "./App.css";
+
+function App() {
+  const names = ["Sara" , "Roxana" , "Ali" , "Amir"]
+  //filter , map , foreach 
+  return (
+    <div className="App">
+      {names.map((name , index )=>{
+        return <h1 key={index}>{name}</h1>
+      })}
+    </div>
+  )
+}
+
+export default App;
+import logo from "./logo.svg";
+import { User } from "./user.js";
+import "./App.css";
+
+function App() {
+  const users = [
+    { name: "Roxana", age: 16 },
+    { name: "Sara", age: 22 },
+    { name: "Ali", age: 40 },
+  ];
+  //filter , map , foreach
+  return (
+    <div className="App">
+      {users.map((user, index) => {
+        return <User key={index} name={user.name} age={user.age} />;
+      })}
+    </div>
+  );
+}
+
+export default App;
+
